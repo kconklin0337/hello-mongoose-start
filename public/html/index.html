@@ -7,7 +7,12 @@
   </head>
   <body ng-controller='TodoController'>
     <div class='container'>
-
+        <ul>
+          <li ng-repeat="todo in todos">
+            {{todo.desc}}
+          </li>
+        </ul>
     </div>
+    <script src="js/app.js"></script>
   </body>
 </html>
