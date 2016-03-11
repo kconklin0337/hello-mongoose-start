@@ -7,6 +7,11 @@
   </head>
   <body ng-controller='TodoController'>
     <div class='container'>
+      <form ng-submit="saveTodo()">
+        <input type="text" ng-model='newTodo.desc'>
+        <button type="submit">Save Todo</button>
+      </form>
+      <hr>
         <ul>
           <li ng-repeat="todo in todos">
             {{todo.desc}}

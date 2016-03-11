@@ -11,7 +11,17 @@ function TodoController($scope, $http){
   $scope.todos = [];
   initTodos();
 
-
+  //Create a new todo
+  $scope.saveTodo = function(){
+    $http.post('/api/todos', $scope.newTodo)
+        .then(function(response){
+          initTodos();
+          $scope.newTodo = {};
+        })
+        .catch(function(err){
+          console.err(err);
+        });
+  }
   function initTodos(){
     $http.get('/api/todos')
         .then(function(response){
